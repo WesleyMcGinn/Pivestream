@@ -12,7 +12,7 @@ from picamera2.outputs import FileOutput
 
 # Customizable:
 port = 7000 # Which port number the livestream will be streamed to (e.g. 8000 means you can access the livestream from http://192.168.1.92:8000)
-streamWidth = 800 # Width, in pixels, of the livestream
+streamWidth = 1080 # Width, in pixels, of the livestream
 streamHeight = round(streamWidth * 9/16) # You can also change this value if you want different proportions
 HTML = "<html><head><title>Pivestream</title><style>body{margin:0;background-color:black}</style></head><body><img src='live.mjpg' width='100%'/></body></html>"
 
