@@ -15,16 +15,22 @@ _Note, however, that this livestream is **not encrypted in any way**, and that i
 curl -fsSL https://wesleymcginn.github.io/Pivestream/install.sh | sh
 ```
 
+4) Reboot:
+
+``` bash
+sudo reboot
+```
+
 ## To Use:
 
 1) Find your Raspberry Pi's IP address by entering: `hostname -I`
    
-2) Open a web browser on any device connected to the same network as the Raspberry Pi and enter your IP address followed by ":7000".  For example, if your IP address was found to be `192.169.1.100`, enter `http://192.169.1.100:7000`.
+2) Open a web browser on any device connected to the same network as the Raspberry Pi and enter your IP address followed by ":7000".  For example, if your IP address was found to be `192.168.1.100`, enter `http://192.168.1.100:7000`.
 
 ## Additional Documentation:
 
-Want to shut down the livestream?  `http://<IP>:7000/stop`
+`http://<IP>:7000/stop` Returns nothing but stops the livestream system and server
 
-Want to get a singular jpg snapshot instead of a mjpg?  `http://<IP>:7000/snap.jpg`
+`http://<IP>:7000/snap.jpg` Returns a jpg image of the most recent frame
 
-Need to access the raw mjpg stream as the image that it is without any scaling?  `http://<IP>:7000/live.mjpg`
+`http://<IP>:7000/live.mjpg` The link to the actual unscaled mjpg stream
