@@ -13,4 +13,6 @@ else
     (crontab -l 2>/dev/null; echo "@reboot python3 /usr/local/bin/pivestream.py") | crontab -
 fi
 
+echo -e "\e[32m"
 echo "Done!  Reboot your pi and then access the livestream from http://$(hostname -I | tr -d ' '):7000"
+echo -e "\e[0m"
