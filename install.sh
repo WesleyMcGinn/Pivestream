@@ -14,5 +14,5 @@ else
 fi
 
 echo -e "\e[32m"
-echo "Done!  Reboot your pi and then access the livestream from http://$(hostname -I | tr -d ' '):7000"
+echo "Done!  Reboot your pi and then access the livestream from http://$(ip -4 -br addr show | awk '/^wl/ && NF>=3 { split($3, a, "/"); print a[1] }'):7000"
 echo -e "\e[0m"
