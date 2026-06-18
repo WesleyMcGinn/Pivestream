@@ -1,4 +1,4 @@
-# Pivestream 📺️
+# Pivestream 📺️ 🎥
 ### That simple open-source livestream system you've been looking for....
 
 ## About:
