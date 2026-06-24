@@ -23,13 +23,13 @@
 3) Type this and press enter:
    
 ``` bash
-curl -fsSL https://wesleymcginn.github.io/Pivestream/install.sh | sh
+curl -fsSL https://wesleymcginn.github.io/Pivestream/install.sh | bash
 ```
 
 Or, for a **USB Camera** (_not_ a Pi Camera), use this:
 
 ``` bash
-curl -fsSL https://wesleymcginn.github.io/Pivestream/install.usb.sh | sh
+curl -fsSL https://wesleymcginn.github.io/Pivestream/install.usb.sh | bash
 ```
 
 ## To Use:
