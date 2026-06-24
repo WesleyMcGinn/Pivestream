@@ -36,6 +36,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
                     self.send_response(200)
                     self.send_header('Content-Type', 'image/jpeg')
                     self.send_header('Content-Length', len(output.frame))
+                    self.send_header('Access-Control-Allow-Origin', '*')
                     self.end_headers()
                     self.wfile.write(output.frame)
         elif self.path == '/live.mjpg':
@@ -44,6 +45,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_header('Cache-Control', 'no-cache, private')
             self.send_header('Pragma', 'no-cache')
             self.send_header('Content-Type', 'multipart/x-mixed-replace; boundary=FRAME')
+            self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
             try:
                 theTime = time.time()
@@ -55,6 +57,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
                         self.wfile.write(b'--FRAME\r\n')
                         self.send_header('Content-Type', 'image/jpeg')
                         self.send_header('Content-Length', len(frame))
+                        self.send_header('Access-Control-Allow-Origin', '*')
                         self.end_headers()
                         self.wfile.write(frame)
                         self.wfile.write(b'\r\n')
@@ -66,6 +69,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-Type', 'text/html')
             self.send_header('Content-Length', len(content))
+            self.send_header('Access-Control-Allow-Origin', '*')
             self.end_headers()
             self.wfile.write(content)
 
