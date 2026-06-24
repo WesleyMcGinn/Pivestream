@@ -15,7 +15,7 @@ fi
 
 echo -e "\e[97;42;1mDone!  Reboot your pi and then access the livestream from http://$(ip -4 -br addr show | awk '/^wl/ && NF>=3 { split($3, a, "/"); print a[1] }'):7000\e[0m"
 
-read -p "Wanna reboot now? [Y/n] " response
+read -p "Wanna reboot now? [Y/n] " response < /dev/tty
 if [[ "$response" =~ ^[yY] ]]; then
     echo -e "\e[93mRebooting in 3 seconds.\e[0m"
     echo -e "Press \e[31;1mCtrl + c\e[0m to cancel. "
