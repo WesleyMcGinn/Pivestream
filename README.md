@@ -32,6 +32,12 @@ Or, for a **USB Camera** (_not_ a Pi Camera), use this:
 curl -fsSL https://wesleymcginn.github.io/Pivestream/install.usb.sh | bash
 ```
 
+Or, if you are using a **USB Camera** but are running a much _older_ distribution of the Raspberry Pi OS (like Raspbian Stretch, for example), you can try the version that runs on plain python (not python3):
+
+``` bash
+curl -fsSL https://wesleymcginn.github.io/Pivestream/install.old.sh | bash
+```
+
 ## To Use:
 
 1) Find your Raspberry Pi's IPv4 address. (You will see it at the end of Pivestream installation)
