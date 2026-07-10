@@ -4,13 +4,13 @@ echo -e "\e[30;103;1mInstalling dependencies....\e[0m"
 sudo apt-get install libatlas-base-dev libhdf5-dev libhdf5-serial-dev libjasper-dev libqtgui4 libqt4-test python-opencv -y > /dev/null
 
 echo -e "\e[30;103;1mDownloading livestream script....\e[0m"
-sudo wget -O /usr/local/bin/pivestream.usb.py -q https://wesleymcginn.github.io/Pivestream/pivestream.old.py
+sudo wget -O /usr/local/bin/pivestream.py -q https://wesleymcginn.github.io/Pivestream/pivestream.old.py
 
 echo -e "\e[30;103;1mSetting script to start automatically on boot....\e[0m"
-if crontab -l 2>/dev/null | grep -qF "@reboot python /usr/local/bin/pivestream.old.py"; then
+if crontab -l 2>/dev/null | grep -qF "@reboot python /usr/local/bin/pivestream.py"; then
     echo "Pivestream USB is already set to run on boot."
 else
-    (crontab -l 2>/dev/null; echo "@reboot python /usr/local/bin/pivestream.old.py") | crontab -
+    (crontab -l 2>/dev/null; echo "@reboot python /usr/local/bin/pivestream.py") | crontab -
 fi
 
 echo -e "\e[97;42;1mDone!  Reboot your pi and then access the livestream from http://$(ip -4 -br addr show | awk '/^wl/ && NF>=3 { split($3, a, "/"); print a[1] }'):7000\e[0m"
